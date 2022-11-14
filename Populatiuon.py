@@ -1,4 +1,3 @@
-from array import *
 # The menu 
 def Menu():
     print("Please Select and option")
@@ -16,7 +15,6 @@ Values = [["Enter Number of generations: ", ""],
              ["Enter number of Adults: ", ""],
              ["Enter Number of Seniles: ", ""],
              ["Enter Birth Rate: ", ""] ]           
-
 
 
 
@@ -54,17 +52,29 @@ while True:
 
     # Runs the model
     if input1 == 3:
+        birthrate = int(Values[4][1])
+        juviniles = int(Values[1][1])
+        adults = int(Values[2][1])
+        seniles = int(Values[3][1])
 
         while Values[0][1] > 0:
-            Values[3][1] = (Values[3][1] * 0) + Values[2][1]
-            Values[2][1] = (Values[2][1] * 0) + Values[1][1]
-            Values[1][1] = (Values[1][1] * 0) + (Values[2][1] * Values[4][1])
+            newseniles = adults
+            newadults = juviniles
+            juviniles = 0
+            newjuvies = adults * birthrate
+
+            # All seniles die and adults become seniles
+            #Values[3][1] = (Values[3][1] * 0) + Values[2][1]
+            # All Juvniles become adults
+            #Values[2][1] = (Values[2][1] * 0) + Values[1][1]
+
+            
 
             
 
 
-            print(Values[2][1])
-            
+            #print(Values[2][1])
+            print(newjuvies)
             
 
 
