@@ -10,33 +10,42 @@ def Menu():
     input1 = int(input("Enter: "))
     
 # 2d Array to store the question and the answer
-Values = [["Enter Number of generations: ", ""],
+Questions = [["Enter Number of generations: ", ""],
              ["Enter number of Juvivniles: ", ""],
              ["Enter number of Adults: ", ""],
              ["Enter Number of Seniles: ", ""],
              ["Enter Birth Rate: ", ""] ]           
 
-
+Values = [["Generations"],
+          ["juviniles"],
+          ["Adults"],
+          ["Seniles"],
+          ["Birth Rate"]]
 
 Menu()
 # Infinite Loop using While True
 while True: 
     # Asks the questions and recieves answers and stores them
     if input1 == 1:
-        print(Values[0][0])
-        Values[0][1] = int(input())  
+        print(Questions[0][0])
+        Generations = int(input())  
+        Values[0].append(Generations)
 
-        print(Values[1][0])
-        Values[1][1] = int(input())
+        print(Questions[1][0])
+        Juviniles = int(input())
+        Values[1].append(Juviniles)
 
-        print(Values[2][0])
-        Values[2][1] = int(input())
+        print(Questions[2][0])
+        Adults = int(input())
+        Values[2].append(Adults)
 
-        print(Values[3][0])
-        Values[3][1] = int(input())
+        print(Questions[3][0])
+        Seniles = int(input())
+        Values[3].append(Seniles)
 
-        print(Values[4][0])
-        Values[4][1] = int(input())
+        print(Questions[4][0])
+        BirthRate = int(input())
+        Values[4].append(BirthRate)
         Menu()
         
     
