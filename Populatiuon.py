@@ -22,15 +22,20 @@ Values = [["Generations"],
           ["Seniles"],
           ["Birth Rate"]]
 
+birthrate = int(Values[4][1])
+oldJuvi = int(Values[1][1])
+oldAdults = int(Values[2][1])
+oldSeniles = int(Values[3][1])
+
 Menu()
 # Infinite Loop using While True
 while True: 
     # Asks the questions and recieves answers and stores them
     if input1 == 1:
         print(Questions[0][0])
-        Generations = int(input())  
-        Values[0].append(Generations)
-
+        Gens = int(input())
+        Values[0].append(Gens)
+        
         print(Questions[1][0])
         Juviniles = int(input())
         Values[1].append(Juviniles)
@@ -61,33 +66,20 @@ while True:
 
     # Runs the model
     if input1 == 3:
-        birthrate = int(Values[4][1])
-        juviniles = int(Values[1][1])
-        adults = int(Values[2][1])
-        seniles = int(Values[3][1])
-
+        
+        
+         
         while Values[0][1] > 0:
-            newseniles = adults
-            newadults = juviniles
-            juviniles = 0
-            newjuvies = adults * birthrate
+            newAdult = oldJuvi
+            newJuvi = oldAdults * birthrate
+            newAdult = oldAdults * 0.75 
+            oldSeniles = oldSeniles * 0.3 
+            newSenile = oldSeniles + newAdult
 
-            # All seniles die and adults become seniles
-            #Values[3][1] = (Values[3][1] * 0) + Values[2][1]
-            # All Juvniles become adults
-            #Values[2][1] = (Values[2][1] * 0) + Values[1][1]
-
+            print(newAdult)
+            print(newSenile)
+            print(newJuvi)
             
-
-            
-
-
-            #print(Values[2][1])
-            print(newjuvies)
-            
-
-
-
 
             Values[0][1] -= 1 
 
