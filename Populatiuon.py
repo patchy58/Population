@@ -22,10 +22,6 @@ Values = [["Generations"],
           ["Seniles"],
           ["Birth Rate"]]
 
-birthrate = int(Values[4][1])
-oldJuvi = int(Values[1][1])
-oldAdults = int(Values[2][1])
-oldSeniles = int(Values[3][1])
 
 Menu()
 # Infinite Loop using While True
@@ -66,7 +62,10 @@ while True:
 
     # Runs the model
     if input1 == 3:
-        
+        birthrate = int(Values[4][1])
+        oldJuvi = int(Values[1][1])
+        oldAdults = int(Values[2][1])
+        oldSeniles = int(Values[3][1])
         
          
         while Values[0][1] > 0:
